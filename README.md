@@ -6,7 +6,7 @@ Features include a 5x7 characters displaying a sign message, temperature read fr
 
 ## Contribution
 
-Worked on the hardware development.
+Project was with a team of 4, and I worked on the hardware development.
 
 Developed hal files to interact with the tmp36 and 16x32 LED panel.
 
