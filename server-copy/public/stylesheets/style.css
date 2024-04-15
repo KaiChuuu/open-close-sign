@@ -1,0 +1,59 @@
+/* Styles for the title section */
+#title-section {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#title-section h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#title-section div {
+    font-style: italic;
+    color: #666;
+}
+
+/* Additional styles specific to opening hours section */
+#opening-hours-section {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#opening-hours-section label {
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#opening-hours-section .checkbox-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#opening-hours-section .closed-text {
+    display: none;
+    color: red;
+}
+
+#opening-hours-section input[type="time"] {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#opening-hours-section input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#opening-hours-section input[type="time"] {
+    display: inline-block;
+}
+
+hr {
+    border: 1px solid #ccc; /* Border style for the line */
+    margin: 20px 0; /* Margin to provide spacing above and below the line */
+}

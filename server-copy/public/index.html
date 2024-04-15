@@ -1,0 +1,125 @@
+<!-- Chat gpt used for optimization at  toggleTimeInputs-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Server</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<form id="opening-hours-form" >
+    <div id="title-section">
+        <h1>CMPT 433 Project</h1>
+        <div>by Fatemeh, Chang, Abdul and Kai</div>
+    </div>
+    <div id="opening-hours-section">
+        <h2>Opening Hours</h2>
+
+        <script>
+            function toggleTimeInputs(day) {
+                const checkBox = document.querySelector(`input[name="closed${day.charAt(0).toUpperCase() + day.slice(1)}"]`);
+                const timeInputs = document.querySelectorAll(`input[name="${day}Open"], input[name="${day}Close"]`);
+                const closedText = document.querySelector(`#${day}ClosedText`);
+
+                timeInputs.forEach(input => {
+                    if(checkBox.checked){
+                        input.style.display = 'none';
+                    } else{
+                        input.style.display = 'inline-block';
+                    }
+                });
+
+                if(checkBox.checked){
+                    closedText.style.display = 'inline-block';
+                } else {
+                    closedText.style.display = 'none';
+                }
+            }
+        </script>
+
+        <!-- Monday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedMonday" onchange="toggleTimeInputs('monday')"> Monday</label>
+            <span id="mondayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="mondayOpen" class="time-input">
+        to
+        <input type="time" name="mondayClose" class="time-input"><br><br>
+
+        <!-- Tuesday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedTuesday" onchange="toggleTimeInputs('tuesday')"> Tuesday</label>
+            <span id="tuesdayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="tuesdayOpen" class="time-input">
+        to
+        <input type="time" name="tuesdayClose" class="time-input"><br><br>
+
+        <!-- Wednesday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedWednesday" onchange="toggleTimeInputs('wednesday')"> Wednesday</label>
+            <span id="wednesdayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="wednesdayOpen" class="time-input">
+        to
+        <input type="time" name="wednesdayClose" class="time-input"><br><br>
+
+        <!-- Thursday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedThursday" onchange="toggleTimeInputs('thursday')"> Thursday</label>
+            <span id="thursdayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="thursdayOpen" class="time-input">
+        to
+        <input type="time" name="thursdayClose" class="time-input"><br><br>
+
+        <!-- Friday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedFriday" onchange="toggleTimeInputs('friday')"> Friday</label>
+            <span id="fridayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="fridayOpen" class="time-input">
+        to
+        <input type="time" name="fridayClose" class="time-input"><br><br>
+
+        <!-- Saturday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedSaturday" onchange="toggleTimeInputs('saturday')"> Saturday</label>
+            <span id="saturdayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="saturdayOpen" class="time-input">
+        to
+        <input type="time" name="saturdayClose" class="time-input"><br><br>
+
+        <!-- Sunday -->
+        <div class="checkbox-container">
+            <label><input type="checkbox" name="closedSunday" onchange="toggleTimeInputs('sunday')"> Sunday</label>
+            <span id="sundayClosedText" class="closed-text">Closed</span>
+        </div>
+        <input type="time" name="sundayOpen" class="time-input">
+        to
+        <input type="time" name="sundayClose" class="time-input"><br><br>
+    </div>
+    <!-- End of Opening Hours Section -->
+
+    <input id="sch-sub-button"  type="submit" value="Submit"    style="display: block; margin: 0 auto;">
+
+</form>
+<hr>
+<form id="send-form">
+    <input id="send-command" type="text" placeholder="Enter text..." style="display: block; margin: 0 auto;">
+    <input id="send-button" type="submit" value="Send" style="display: block; margin: 0 auto;">
+</form>
+<hr>
+<div id='control'>
+    <p>
+        <input type="button" id="stop" value="Stop Program" style="display: block; margin: 0 auto;"/>
+    </p>
+</div>
+    
+<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="javascripts/sign_ui.js" type="text/javascript"></script>
+</body>
+</html>
